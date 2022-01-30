@@ -12,6 +12,7 @@ export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
 
+// This is essentially the root of the app
 export default function App() {
   return (
     <html lang="en">
@@ -22,9 +23,11 @@ export default function App() {
         <Links />
       </head>
       <body>
+        {/* The Outlet component renders the output of the current route that we are in. */}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        {/* LiveReload component is used for live reloading on save */}
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
